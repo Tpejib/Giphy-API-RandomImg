@@ -1,0 +1,97 @@
+$primary-color: #fff;
+$second-color: #000;
+$info-wrap-color: rgba(0,0,0, 0.5);
+
+@mixin flex($direction, $justiCont) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justiCont;
+}
+
+main {
+    @include flex(column, center);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.header {
+    @include flex(row, space-between);
+    padding: 0 5px 0 10px;
+    flex-wrap: wrap;
+        form {
+            flex-shrink: 0;
+                input {
+                    height: 30px;
+                    width: 200px;
+                }
+        }
+        
+}
+
+button {
+    margin: 10px 10px 0 0;
+    background-color: $second-color;
+    color: $primary-color;
+    border: none;
+    width: 100px;
+    height: 30px;
+}
+
+.content {
+    @include flex(row, center);
+    flex-wrap: wrap;
+        figure {
+            position: relative;
+            flex: 0 0 25%;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 10px 10px 0 10px;
+                img {
+                    object-fit: cover;
+                    position: relative;
+                }
+
+                figcaption {
+                    position: relative;
+                    
+                    height: 20px;
+                    width: 200px;
+
+                    text-align: center;
+                    color: $primary-color;
+                    background-color: $second-color;
+                        .info-btn {
+                            margin: 0 auto;
+                            position: absolute;
+                            right: 0;
+                            height: 20px;
+                            width: 20px;
+                        }
+                }
+        }
+}
+
+.info-wrap {
+    @include flex(column, center);
+    align-items: center;
+
+    position: absolute;
+    top: 10px;
+
+    width: 200px;
+    height: 200px;
+
+    background-color: $info-wrap-color;
+    color: $primary-color;
+        .info-wrap-btn {
+            margin: 0 auto;
+                a {
+                text-decoration: none;
+                color: $primary-color; 
+                }
+        }
+}
+
+.hide {
+    display: none;
+}
