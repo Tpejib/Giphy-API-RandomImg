@@ -1,4 +1,4 @@
-let APIKey = 'J5Wh3wDFl6GkRi4fxyGLUwyw4oKS8vdr',
+let APIKey = '',
     searchBtn = document.getElementById('search-btn'),
     searchInput = document.getElementById('search'),
     refreshBtn = document.getElementById('refresh-btn'),
